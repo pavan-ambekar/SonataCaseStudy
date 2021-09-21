@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CPT</title>
+  </head>
+  <body>
+    <div>
+      <img src="./assect/main.svg" alt="logo" />
+    </div>
+    <div>
+      <h2 class="hadding">
+        <span style="color: #6c63ff">CPT</span> Registration
+      </h2>
+      <form class="input__from" action="">
+        <div>
+          <label for="emmpid">Employee ID</label><br />
+          <input
+            required
+            class="input__box"
+            type="test"
+            id="empid"
+            name="empid"
+          />
+        </div>
+        <div>
+          <label for="emmpname">Employee Name</label><br />
+          <input
+            required
+            class="input__box"
+            type="tel"
+            id="empname"
+            name="emmpname"
+          />
+        </div>
+        <div>
+          <label for="emmpno">Contact No.</label><br />
+          <input
+            required
+            class="input__box"
+            type="phone"
+            id="empno"
+            name="emmpno"
+          />
+        </div>
+        <div>
+          <label for="emmpemail">Email ID</label><br />
+          <input
+            type="email"
+            class="input__box"
+            id="empemail"
+            name="emmpemail"
+          />
+        </div>
+        <div>
+          <label for="emmpedd">Technology</label><br />
+          <select class="input__box" id="emmpedd" name="Technologies">
+            <option value="rdbms">RDBMS</option>
+            <option value="html&css">HTML & CSS</option>
+            <option value="javascript" selected>JAVASCRIPT</option>
+            <option value="python">PYTHON</option>
+            <option value="ai&ml">AI & ML</option>
+          </select>
+        </div>
+        <div>
+          <p class="label">Course</p>
+          <input type="radio" id="course" name="course" value="Full-Time" />
+          <label for="Full-Time">Full-Time</label>
+          <input type="radio" id="Part-Time" name="course" value="Part-Time" />
+            <label for="Part-Time">Part-Time</label>
+        </div>
+        <div>
+          <p class="label">Preferred Date</p>
+          <label for="startdate">From</label>
+          <input
+            class="input__box1"
+            type="date"
+            name="startdate"
+            id="startdate"
+          />
+          <label class="label" for="enddate">To</label>
+          <input class="input__box1" type="date" name="enddate" id="enddate" />
+        </div>
+        <div>
+          <p class="label">Other Facilities</p>
+          <input
+            type="radio"
+            id="Virtual Lab"
+            name="facil"
+            value="Virtual Lab"
+          />
+          <label class="label" for="Virtual Lab">Virtual Lab</label>
+          <input
+            type="radio"
+            id="Virtual Lab"
+            name="facil"
+            value="Virtual Lab"
+          />
+            <label for="Virtual Lab">Virtual Lab</label>
+          <input
+            type="radio"
+            id="Online Instructor"
+            name="facil"
+            value="Online Instructor"
+          />
+            <label class="label" for="Virtual Lab">Online Instructor</label>
+        </div>
+        <input class="btn" type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
