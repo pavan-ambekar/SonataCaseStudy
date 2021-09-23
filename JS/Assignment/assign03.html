@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Assignment 04</title>
+  </head>
+  <body>
+    <h1>Sonata Employees</h1>
+    <input type="text" id="name" />
+    <button onclick="submit()">Submit</button>
+    <table id="empTable" border="1">
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+      </tr>
+    </table>
+  </body>
+  <script>
+    var empName = [
+      "Olivia",
+      "Liam",
+      "Emma",
+      "Noah",
+      "Amelia",
+      "Oliver",
+      "Ava",
+      "Elijah",
+      "Sophia",
+      "Lucas",
+      "Charlotte",
+      "Mason",
+      "Isabella",
+      "Levi",
+      "Mia",
+      "Asher",
+      "Luna",
+      "James",
+      "Harper",
+      "Mateo",
+    ];
+    var dept = [
+      "Integrated technology services",
+      "Digital business group",
+      "Global technology solutions",
+      "Agile competitive technology solutions (ACTS)",
+      "Business technology unit",
+      "Integrated technology services",
+      "Digital business group",
+      "Global technology solutions",
+      "Agile competitive technology solutions (ACTS)",
+      "Business technology unit",
+      "Integrated technology services",
+      "Digital business group",
+      "Global technology solutions",
+      "Agile competitive technology solutions (ACTS)",
+      "Business technology unit",
+      "Integrated technology services",
+      "Digital business group",
+      "Global technology solutions",
+      "Agile competitive technology solutions (ACTS)",
+      "Business technology unit",
+    ];
+    var table = document.getElementById("empTable");
+    console.log(empName.length);
+    for (var i = 0; i < empName.length; i++) {
+      var row = document.createElement("tr");
+      row.classList.add("temp");
+      row.setAttribute("id", empName[i].toUpperCase());
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode(empName[i]);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode(dept[i]);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+      table.appendChild(row);
+
+      function submit() {
+        var rows = table.getElementsByTagName("tr");
+
+        for (i = 0; i < rows.length; i++) {
+          rows[i].style.backgroundColor = "white";
+        }
+        var key = document.getElementById("name").value.toUpperCase();
+        console.log(key);
+        document.getElementById(key).style.backgroundColor = "yellow";
+      }
+    }
+  </script>
+</html>
