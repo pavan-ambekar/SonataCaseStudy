@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign In</title>
+    <link rel="icon" type="image/png" href="./assects/favicon.png" />
+  </head>
+  <body class="main__page__body">
+    <div class="lhs__image">
+      <img src="./assects/signup.svg" alt="sign in" />
+    </div>
+    <div class="rhs__content">
+      <h1>Hello<br />There<span>.</span></h1>
+      <div class="myForm">
+        <form action="">
+          <div>
+            <label for="email">Email</label>
+            <br />
+            <input
+              class="textBox"
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <br />
+            <input
+              class="textBox"
+              type="password"
+              name="password"
+              id="password"
+              minlength="6"
+              required
+            />
+          </div>
+          <div>
+            <input class="button" type="submit" value="Sign in" />
+          </div>
+          <div>
+            <input
+              class="button__outlie"
+              type="button"
+              value="Sign in with google"
+            />
+          </div>
+          <div>
+            <p>New to TOKEN? <a href="./sign_up.html">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
