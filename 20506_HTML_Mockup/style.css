@@ -1,6 +1,8 @@
 *{
   margin: 0;
   padding: 0;
+  
+  font-family: 'Montserrat', sans-serif;
 }
 .main__body{
   background-color: #4158D0;
@@ -157,4 +159,79 @@ color: gray;
   margin: auto 0;
   font-size: 0.8rem;
   text-align: center;
+}
+
+/* dashboard */
+.dash__page__body {
+  background-color: #f2f2f2;
+}
+.top__nav {
+  background-color: #fff;
+  display: flex;
+  padding:0.2rem 1rem;
+  height: 40px;
+  align-content: center;
+  justify-content: space-between;
+  box-shadow:rgba(0, 0, 0, 0.05) 0px 0.1rem 0.3rem, rgba(0, 0, 0, 0.05) 0px 0.1rem 0.2rem, rgba(0, 0, 0, 0.05) 0px 0.5rem 1.5rem;
+border:0;
+position: -webkit-sticky; /* Safari */
+position: sticky;
+top: 0;
+}
+.top__nav > img {
+  padding: 0.2rem;
+}
+
+.top__nav > div {
+  display: flex;
+  padding: 0.4rem;
+  gap: 1rem;
+}
+
+.dash__sub__body{
+  padding: 0 5rem;
+}
+
+.user__details{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 2rem 0rem;
+}
+
+.user__details > img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+} 
+.user__details > div > p{
+  font-size: 1.8rem;
+}
+.user__details > div > h1 {
+  font-size: 3rem;
+  color: #F5B67E;
+}
+.book {
+  padding: 2rem 0;
+}
+.cards{
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 1rem;
+}
+.card{
+  background-color: #fff;
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.26), 0 2px 10px 0 rgba(0,0,0,0.16);
+border:0;
+border-radius: 1rem;
+padding: 2rem 3rem;
+display: flex;
+gap:2rem;
+width: 16rem;
+margin: 1rem;
+aspect-ratio: 50/9;
+
 }
