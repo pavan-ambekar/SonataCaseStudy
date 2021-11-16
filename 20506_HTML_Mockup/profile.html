@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Set your profile</title>
+  </head>
+  <body class="dash__page__body">
+    <nav class="top__nav">
+      <img src="./assects/logo.png" alt="logo" />
+      <div>
+        <img src="./assects/bell.svg" alt="bell" />
+        <img src="./assects/dp.svg" alt="dp" />
+      </div>
+    </nav>
+    <div class="dash__sub__body">
+      <div class="doc__details">
+        <img src="./assects/profile.jpg" alt="Profile" />
+        <div>
+          <h1>Dr. Rio Cliff</h1>
+        </div>
+      </div>
+      <hr style="width: 100%" />
+      <div class="doc__content">
+        <div class="detailsForm">
+          <form class="pat__form" action="">
+            <div>
+              <div>
+                <label for="Blood_Group">Blood Group</label>
+                <br />
+                <input
+                  class="textBox"
+                  type="text"
+                  name="Blood_Group"
+                  id="Blood_Group"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <br />
+                <input
+                  class="textBox"
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                />
+              </div>
+              <div>
+                <label for="PhoneNumber">Phone Number</label>
+                <br />
+                <input
+                  class="textBox"
+                  type="text"
+                  name="PhoneNumber"
+                  id="PhoneNumber"
+                />
+              </div>
+            </div>
+            <div>
+              <div>
+                <label for="Age">Age</label>
+                <br />
+                <input class="textBox" type="number" name="Age" id="Age" />
+              </div>
+              <div>
+                <label for="sex">Sex</label>
+                <br />
+                <select class="textBox" name="sex" id="sex">
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                  <option value="T">Transgender</option>
+                </select>
+              </div>
+              <div>
+                <input class="button" type="submit" value="Update" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
