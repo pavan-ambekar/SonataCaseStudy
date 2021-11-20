@@ -2,6 +2,7 @@ package com.sonata.Controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import com.sonata.Model.Doctor;
 import com.sonata.Reoisitory.DoctorRepoisitory;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/doctor")
 public class DoctorController {
 	
