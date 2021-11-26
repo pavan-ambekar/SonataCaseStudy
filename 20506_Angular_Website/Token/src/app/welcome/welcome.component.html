@@ -1,0 +1,23 @@
+<div class="main__body">
+  <!-- <img src="./assects/TOKEN.svg" alt="" /> -->
+  <div class="home__card">
+    <div>
+      <h1 class="title">
+        T<span><img src="assets/img/TOKEN.svg" alt="Logo" /></span>KEN
+      </h1>
+    </div>
+    <hr />
+    <div class="Welcome__btn__container">
+      <a class="btn" [routerLink]="['/login/doctor']" routerLinkActive="active">
+        Doctor Sign in
+      </a>
+      <a
+        class="btn"
+        [routerLink]="['/login/patient']"
+        routerLinkActive="active"
+      >
+        Patient Sign in
+      </a>
+    </div>
+  </div>
+</div>

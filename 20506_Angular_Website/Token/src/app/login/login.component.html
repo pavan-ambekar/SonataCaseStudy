@@ -1,0 +1,57 @@
+<div class="main__page__body">
+  <div class="lhs__image">
+    <img src="assets/img/signup.svg" alt="sign in" />
+  </div>
+  <div class="rhs__content">
+    <h1>Hello<br />There<span>.</span></h1>
+    <div class="myForm">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div>
+          <label for="email">Email</label>
+          <br />
+          <input
+            class="textBox"
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            required
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <br />
+          <input
+            class="textBox"
+            type="password"
+            name="password"
+            id="password"
+            minlength="6"
+            formControlName="password"
+            required
+          />
+        </div>
+        <!-- <div *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.error?.required">Email is Required.</div>
+        </div>
+        <div *ngIf="password.invalid && (password.dirty || email.touched)">
+          <div *ngIf="password.error?.required">Password is Required.</div>
+          <div *ngIf="password.error?.minlength">
+            Password must be at least 6 characters long.
+          </div>
+        </div> -->
+        <div>
+          <button class="button" type="submit" [disabled]="!loginForm.valid">
+            Sign in
+          </button>
+        </div>
+        <p *ngIf="error" class="text-center error">{{ error }}</p>
+        <div>
+          <p>
+            New to TOKEN? <a [routerLink]="['/register', type]">Register</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

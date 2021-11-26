@@ -1,0 +1,54 @@
+<div class="main__page__body">
+  <div class="lhs__image">
+    <img src="/assets/img/signin.svg" alt="sign up" />
+  </div>
+  <div class="rhs__content">
+    <h1>Sign Up<span>.</span></h1>
+    <div class="myForm">
+      <form [formGroup]="regForm" (ngSubmit)="onRegister()">
+        <div>
+          <label for="name">Name</label>
+          <br />
+          <input
+            class="textBox"
+            type="text"
+            name="name"
+            id="name"
+            formControlName="name"
+            required
+          />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <br />
+          <input
+            class="textBox"
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            required
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <br />
+          <input
+            class="textBox"
+            type="password"
+            name="password"
+            id="password"
+            minlength="6"
+            formControlName="password"
+            required
+          />
+        </div>
+        <div>
+          <button type="submit" class="button" [disabled]="!regForm.valid">
+            Sign up
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
