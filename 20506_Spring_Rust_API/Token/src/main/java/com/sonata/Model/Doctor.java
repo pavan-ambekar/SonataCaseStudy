@@ -19,7 +19,7 @@ public class Doctor {
 	private String drName;
 	private String speclization;
 	@Column(nullable = false)
-	private String eMail;
+	private String eMail;	
 	private String phoneNumber;
 
 	public Long getDrID() {

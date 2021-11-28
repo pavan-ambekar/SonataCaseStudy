@@ -20,7 +20,7 @@ import com.sonata.Model.Slot;
 import com.sonata.Reoisitory.PrescriptionRepoisitory;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200","http://localhost:3000"})
 @RequestMapping("/pres")
 public class PrescriptionController {
 	

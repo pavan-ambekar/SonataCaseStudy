@@ -16,10 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sonata.Model.Doctor;
 import com.sonata.Model.Patient;
 import com.sonata.Model.PatientFeedback;
+import com.sonata.Model.Slot;
 import com.sonata.Reoisitory.PatientFeedbackRepoisitory;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:3000" })
 @RequestMapping("/feedback")
 public class PatientFeedbackController {
 
@@ -30,25 +31,28 @@ public class PatientFeedbackController {
 	public List<PatientFeedback> showAll() {
 		return fbRepo.findAll();
 	}
-	
+
 	@PostMapping("/add")
 	public PatientFeedback add(@RequestBody PatientFeedback fb) {
+		long millis = System.currentTimeMillis();
+		java.sql.Date date = new java.sql.Date(millis);
+		fb.setDate(date);
 		return fbRepo.save(fb);
 	}
-	
+
 	@PostMapping("/bydoc")
-	public List<PatientFeedback> byDoc(@RequestBody Doctor doc){
-		return fbRepo.findByDoctor(doc);
+	public List<PatientFeedback> byDoc(@RequestBody Doctor doc) {
+		return fbRepo.findByDoc(doc.getDrID());
 	}
-	
+
 	@PostMapping("/bypat")
-	public List<PatientFeedback> byPat(@RequestBody Patient pat){
-		return fbRepo.findByPatient(pat);
+	public List<PatientFeedback> byPat(@RequestBody Patient pat) {
+		return fbRepo.findByPat(pat.getPatID());
 	}
-	
-	@PostMapping("/update_fb")
-	public int updateFb(@RequestBody PatientFeedback fb) {
-		return fbRepo.updatefb(fb.getFeedbackID(), fb.getFeedback());
+
+	@PostMapping("/byslot")
+	public List<PatientFeedback> byslot(@RequestBody Slot s) {
+		return fbRepo.findBySlot(s);
 	}
 	
 	@DeleteMapping("/delete/{id}")
@@ -56,6 +60,5 @@ public class PatientFeedbackController {
 		fbRepo.deleteById(id);
 		return ResponseEntity.status(200).build();
 	}
-	
 
 }

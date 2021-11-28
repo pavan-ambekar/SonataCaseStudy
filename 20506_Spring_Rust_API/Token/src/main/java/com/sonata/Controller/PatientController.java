@@ -11,7 +11,7 @@ import com.sonata.Model.Patient;
 import com.sonata.Reoisitory.PatientReoisitory;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200","http://localhost:3000"})
 @RequestMapping("/patient")
 public class PatientController {
 
@@ -23,5 +23,9 @@ public class PatientController {
 		return pr.updateDeails(p.getPatID(), p.getAge(), p.getBloodGroup(), p.getName(), p.getPhoneNumber(),
 				p.getSex());
 	}
-
+	
+	@PostMapping("/info")
+	public Patient getInfo(@RequestBody Patient p) {
+		return pr.findByeMail(p.geteMail());
+	}
 }

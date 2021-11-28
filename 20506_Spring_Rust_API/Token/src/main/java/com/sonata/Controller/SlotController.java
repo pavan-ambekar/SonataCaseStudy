@@ -19,7 +19,7 @@ import com.sonata.Model.Slot;
 import com.sonata.Reoisitory.SlotRepoisitory;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200","http://localhost:3000"})
 @RequestMapping("/slot")
 public class SlotController {
 	
@@ -33,6 +33,7 @@ public class SlotController {
 	
 	@PostMapping("/add")
 	public Slot add(@RequestBody Slot s) {
+		System.out.println(s);
 		return sr.save(s);
 	}
 	

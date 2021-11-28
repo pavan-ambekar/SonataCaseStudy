@@ -17,7 +17,7 @@ import com.sonata.Model.DoctorLogin;
 import com.sonata.Reoisitory.DoctorLoginRepoisitory;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200","http://localhost:3000"})
 @RequestMapping("doctor")
 public class DoctorLoginController {
 
@@ -35,8 +35,13 @@ public class DoctorLoginController {
 	}
 
 	@PostMapping("/getpassword")
-	public String getPassword(@RequestBody String s) {
-		return docLogRepo.getPass(s);
+	public Boolean getPassword(@RequestBody DoctorLogin dl) {
+		String res = docLogRepo.getPass(dl.getDoctor().geteMail());
+		if(res == null) 
+			return null;
+		else if(res.equals(dl.getPassword()))
+			return true;
+		return  false;
 	}
 	
 	@DeleteMapping("/delete/{id}")

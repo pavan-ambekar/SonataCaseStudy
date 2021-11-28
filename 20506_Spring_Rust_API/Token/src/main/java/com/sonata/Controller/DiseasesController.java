@@ -18,7 +18,7 @@ import com.sonata.Model.Diseases;
 import com.sonata.Reoisitory.DiseasesRepoisitory;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200","http://localhost:3000"})
 @RequestMapping("/dis")
 public class DiseasesController {
 

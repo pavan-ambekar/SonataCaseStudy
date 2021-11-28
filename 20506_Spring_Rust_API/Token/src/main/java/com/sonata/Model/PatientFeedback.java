@@ -4,11 +4,12 @@ import java.sql.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -18,61 +19,42 @@ public class PatientFeedback {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "feedback_sequence")
 	private Long feedbackID;
 	
-	@ManyToOne(cascade = CascadeType.DETACH)
-	@JoinColumn(name = "dr_id", referencedColumnName = "drID")
-	private Doctor doctor;
+	@OneToOne(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+	@JoinColumn(name = "solt_id", referencedColumnName = "slotID")
+	private Slot slot;
 	
-	@ManyToOne(cascade = CascadeType.DETACH)
-	@JoinColumn(name = "pat_id", referencedColumnName = "patID")
-	
-	private Patient patient;
 	private String feedback;
 	private Date date;
-
 	public Long getFeedbackID() {
 		return feedbackID;
 	}
-
 	public void setFeedbackID(Long feedbackID) {
 		this.feedbackID = feedbackID;
 	}
-
-	public Doctor getDoctor() {
-		return doctor;
+	public Slot getSlot() {
+		return slot;
 	}
-
-	public void setDoctor(Doctor doctor) {
-		this.doctor = doctor;
+	public void setSlot(Slot slot) {
+		this.slot = slot;
 	}
-
-	public Patient getPatient() {
-		return patient;
-	}
-
-	public void setPatient(Patient patient) {
-		this.patient = patient;
-	}
-
 	public String getFeedback() {
 		return feedback;
 	}
-
 	public void setFeedback(String feedback) {
 		this.feedback = feedback;
 	}
-
 	public Date getDate() {
 		return date;
 	}
-
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
 	@Override
 	public String toString() {
-		return "PatientFeedback [feedbackID=" + feedbackID + ", doctor=" + doctor + ", patient=" + patient
-				+ ", feedback=" + feedback + ", date=" + date + "]";
+		return "PatientFeedback [feedbackID=" + feedbackID + ", slot=" + slot + ", feedback=" + feedback + ", date="
+				+ date + "]";
 	}
+
+
 
 }

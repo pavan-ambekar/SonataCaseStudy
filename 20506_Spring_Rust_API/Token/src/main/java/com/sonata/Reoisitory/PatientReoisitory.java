@@ -15,5 +15,7 @@ public interface PatientReoisitory extends JpaRepository<Patient, Long> {
 	@Transactional
 	@Query(value = "UPDATE patient SET age = :age, blood_group = :bloodGroup, name = :name, phone_number = :phoneNumber, sex = :sex  WHERE patid = :id", nativeQuery = true)
 	int updateDeails(Long id, int age, String bloodGroup, String name, String phoneNumber, String sex);
+	
+	Patient findByeMail(String eMail);
 
 }
